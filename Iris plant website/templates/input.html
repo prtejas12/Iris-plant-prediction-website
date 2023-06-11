@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1.0"/>
+    <title>iris</title>
+    <style>
+        body{
+        background-color:#ff6d6d;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        margin-top:8%;
+        }
+        form{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        flex-direction:column;
+        padding:14px;
+        gap:1em;
+        border:1px solid black;
+        width:50%;
+        background-color:#fff6d6;
+        }
+        form input{
+        padding:3px;
+        }
+        marquee{
+        background-color:lightgreen;
+        }
+        p{
+        background-color:green;
+        color:white;
+        width:100%;
+        text-align:center;
+        height:40px;
+        font-style:san-serif;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        }
+        input{
+        border-style:none;
+        }
+        input:focus{
+        outline:none;
+        }
+        .button{
+        border:1px solid black;
+        height:4vh;
+        width:14vw;
+        justify-content:center;
+        }
+    </style>
+</head>
+<body>
+<form method="POST" action="/predict">
+    <h1>Plant Predict</h1>
+    {% if result %}
+        <p>This is a {{result[2:-2]}} plant</p>
+    {% endif %}
+<input type="text" placeholder="Enter the sapel lengt" name="pl"/>
+<input type="text" placeholder="Enter the sapel width" name="pw"/>
+<input type="text" placeholder="Enter the petal length" name="sl"/>
+<input type="text" placeholder="Enter the petal width" name="sw"/>
+<input type="submit" value="submit" class="button"/>
+    <marquee direction="scroll">Enter all the values in float/int</marquee>
+</form>
+</body>
+</html>
